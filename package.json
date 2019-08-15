@@ -1,0 +1,22 @@
+{
+  "name": "cognis",
+  "version": "1.0.0",
+  "description": "This project is pretty epic",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aurora-paisley",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "dotenv-flow": "^3.0.0-rc.1",
+    "enmap": "^5.0.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1"
+  }
+}
