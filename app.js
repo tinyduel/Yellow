@@ -1,15 +1,12 @@
 // Discord.js, Bot token and prefix
-const {
-  Client
-} = require('discord.js');
-const {
-  token
-} = require('./config');
+const { Client } = require('discord.js');
+const {  token } = require('./config');
 const fs = require('fs');
 const Enmap = require('enmap');
 const client = new Client();
 const {prefix} = require('./config');
 const config = require('./config');
+
 
 client.commands = new Enmap();
 
@@ -20,11 +17,12 @@ function emoji(id) {
 // Welcoming message
 client.on('guildMemberAdd', async member => {
   if(member.bot) return;
-  member.guild.channels.get('611453942819192854').send('**' + member.user.username + '**, has joined the server!\n https://media.giphy.com/media/aldA8c4X6mk9O/giphy.gif');
-  let gRole = member.guild.roles.find(role => role.name === config.fRoleName);
-
-  if(member.roles.has(gRole.id));
-  await(member.addRole(gRole.id));
+  try{
+    member.guild.channels.get('611453942819192854').send('**' + member.user.username + '**, has joined the server!\n https://media.giphy.com/media/aldA8c4X6mk9O/giphy.gif');
+    let gRole = member.guild.roles.find(role => role.name === config.fRoleName);
+    if(member.roles.has(gRole.id));
+    await(member.addRole(gRole.id));
+}catch(e){};
 });
 
 // Goodbye message
@@ -91,6 +89,7 @@ client.guilds.get(servers[index]).roles.find(role => role.name === config.roleNa
     }
   }
 }
+
 client.on('ready', () => {
    setInterval(changeColor, 250);
 });
@@ -100,11 +99,19 @@ client.on("message", message => {
   var msg = message.content.toLowerCase();
   if(msg.startsWith("thank") || msg.startsWith("tnx")){
     message.channel.send(emoji("596911933316399132"));
+    console.log(emoji("596911933316399132"));
+  };
+  if(msg.startsWith("<:lemons:322459208731721738>")){
+    message.channel.send(emoji("612616971078336512"));
   };
   if(message.isMentioned(client.user)){
     message.channel.send(`My prefix is \`\`${prefix}\`\``);
   };
+
+  
 });
+
+
 
 client.login(token);
 
