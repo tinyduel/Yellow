@@ -10,10 +10,11 @@ exports.run = (client, message, args) => {
     let judgement = doRateto10();
     let mentionedUser = message.mentions.users.first();
     let askingUser = message.author.username;
+    console.log(message);
+    if(message.isMentioned(client.user)){return message.channel.send("I'd give *myself* an **11/10**  😎");}
     if((mentionedUser == null || mentionedUser.username == askingUser)){
         message.channel.send(`I'd give you a **${judgement}/10**, **${askingUser}**`);
     }else{
-      if(mentionedUser == `<@596904934230851617`){return;}
         message.channel.send(`I'd rate **${mentionedUser.username}** a **${judgement}/10** to me, **${askingUser}**`);
     }
 };
