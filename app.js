@@ -104,7 +104,10 @@ client.on("message", message => {
   if(msg.startsWith("<:lemons:322459208731721738>")){
     message.channel.send(emoji("612616971078336512"));
   };
-  if(message.isMentioned(client.user)){
+  if(msg == "fite me"){
+    message.channel.send("\⚾ <:jim:610038077238411294>");
+  }
+  if(msg == client.user){
     message.channel.send(`My prefix is \`\`${prefix}\`\``);
   };
 
