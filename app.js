@@ -105,10 +105,10 @@ client.on("message", message => {
     message.channel.send(emoji("612616971078336512"));
   };
   if(msg == "fite me"){
-    message.channel.send("\⚾ <:jim:610038077238411294>");
+    message.channel.send(`⚾ ${emoji("610038077238411294")}`);
   }
-  if(msg == “Parrot party!”){
-    message.channel.send(emoji(“393572289012170753”).repeat(10));
+  if(msg == "parrot party!"){
+    message.channel.send(emoji("613073520666214459").repeat(10));
   }
   if(msg == client.user){
     message.channel.send(`My prefix is \`\`${prefix}\`\``);
