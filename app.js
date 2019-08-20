@@ -107,7 +107,7 @@ client.on("message", message => {
   if(msg == "fite me"){
     message.channel.send(`⚾ ${emoji("610038077238411294")}`);
   }
-  if(msg.contains("parrot party")){
+  if(msg.includes("parrot party")){
     message.channel.send(emoji("613073520666214459").repeat(20));
   }
   if(msg == client.user){
